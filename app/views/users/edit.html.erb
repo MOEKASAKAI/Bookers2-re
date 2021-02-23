@@ -1,3 +1,13 @@
+<% if @user.errors.any? %>
+<div class = "alert">
+  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this obj from being saved:</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 <h1>User info</h1>
 <%= form_with model:@user, local:true do |f| %>
   <%= f.attachment_field :profile_image %>
