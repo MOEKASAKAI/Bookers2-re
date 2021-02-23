@@ -3,6 +3,7 @@
   <%= f.attachment_field :profile_image %>
   <label for="inputName">name</label>
   <%= f.text_field :name,autofocus: true, id:"inputName", placeholder:"name"%>
+  <label for="inputIntroduction">introduction</label>
   <%= f.text_field :introduction, autofocus: true, id:"inputIntroduction", placeholder:"introduction" %>
 <%= f.submit "Update User" %>
 <% end %>
