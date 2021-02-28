@@ -40,6 +40,19 @@
           </div>
           <% end %>
         <% end %>
+        <% if @book.favorited_by?(current_user) %>
+          <p>
+            <%= link_to book_favorites_path(@book), method: :delete do %>
+              ♥<%= @book.favorites.count %> good
+            <% end %>
+          </p>
+          <% else %>
+          <p></p>
+            <%= link_to book_favorites_path(@book), method: :book do %>
+              ♡<%= @book.favorites.count %> good
+            <% end %>
+          </p>
+        <% end %>
       </div>
       <div class="new-comment">
         <%= form_with(model: [@book, @book_comment], local: true) do |f| %>
